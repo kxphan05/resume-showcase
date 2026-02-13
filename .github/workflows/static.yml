@@ -1,5 +1,4 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Vite site to Pages
 
 on:
   push:
@@ -17,6 +16,9 @@ concurrency:
 
 jobs:
   build-and-deploy:
+    environment:                 # <--- ADD THIS BLOCK
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,7 +42,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Vite outputs to the "dist" folder by default
           path: './dist'
 
       - name: Deploy to GitHub Pages
