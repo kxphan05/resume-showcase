@@ -57,6 +57,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        gold: "hsl(42 92% 55%)",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -81,8 +82,21 @@ export default {
           to: { opacity: "1", transform: "translateX(0)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(187 94% 43% / 0.2)" },
-          "50%": { boxShadow: "0 0 40px hsl(187 94% 43% / 0.4)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(0 85% 55% / 0.2)" },
+          "50%": { boxShadow: "0 0 40px hsl(0 85% 55% / 0.4)" },
+        },
+        "wave": {
+          "0%": { transform: "translateX(0) translateY(0)" },
+          "50%": { transform: "translateX(-25%) translateY(2px)" },
+          "100%": { transform: "translateX(-50%) translateY(0)" },
+        },
+        "ripple": {
+          "0%": { transform: "scale(0.8)", opacity: "0.6" },
+          "100%": { transform: "scale(2.5)", opacity: "0" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-8px)" },
         },
       },
       animation: {
@@ -91,6 +105,9 @@ export default {
         "fade-in": "fade-in 0.6s ease-out forwards",
         "slide-in-left": "slide-in-left 0.6s ease-out forwards",
         "glow-pulse": "glow-pulse 3s ease-in-out infinite",
+        "wave": "wave 8s linear infinite",
+        "ripple": "ripple 3s ease-out infinite",
+        "float": "float 4s ease-in-out infinite",
       },
     },
   },

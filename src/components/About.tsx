@@ -3,14 +3,16 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 
 const skills = [
-  "Python",
-  "Machine Learning",
-  "Speech-to-Text",
-  "Git & CI/CD",
-  "Docker",
-  "Statistical Modeling",
-  "LLM Fine-tuning",
-  "Data Science",
+  { label: "Python", category: "tech" },
+  { label: "Git", category: "tech" },
+  { label: "Docker", category: "tech" },
+  { label: "Linux", category: "tech" },
+  { label: "Azure", category: "tech" },
+  { label: "SQL", category: "tech" },
+  { label: "Machine Learning", category: "ai" },
+  { label: "Statistical Modeling", category: "ai" },
+  { label: "Speech-to-Text", category: "ai" },
+  { label: "Speaker Diarization", category: "ai" },
 ];
 
 const About = () => {
@@ -34,22 +36,27 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2 space-y-4 text-muted-foreground">
               <p>
-                I'm an enthusiastic learner with an inclination towards technical analysis, 
-                whether it's deducing structures in Chemistry or constructing proofs in Mathematics. 
-                I'm an innovative and analytical problem-solver with a keen interest in{" "}
+                Analytical problem-solver and{" "}
+                <span className="text-accent">Turing AI Scholar</span>{" "}
+                specializing in Python and machine learning. I'm an innovative
+                thinker with a keen interest in{" "}
                 <span className="text-primary">artificial intelligence</span> and{" "}
-                <span className="text-primary">machine learning</span>.
+                <span className="text-primary">scalable cloud solutions</span>.
               </p>
               <p>
                 Currently pursuing a Bachelor of Science in Computer Science at{" "}
-                <span className="text-primary">Nanyang Technological University</span> as part of the 
-                prestigious Turing AI Scholars Programme — an exclusive program offered to only 40 scholars each year.
+                <span className="text-primary">
+                  Nanyang Technological University
+                </span>{" "}
+                as part of the prestigious Turing AI Scholars Programme — an
+                exclusive program offered to only 40 scholars each year.
               </p>
               <p>
                 My recent experience at{" "}
-                <span className="text-primary">HTX Singapore</span> has allowed me to work on 
-                cutting-edge AI systems including speaker diarization, LLM optimization, and 
-                speech-to-text technologies.
+                <span className="text-primary">HTX Singapore</span> has allowed me
+                to work on cutting-edge AI systems including speaker diarization,
+                LLM optimization, and speech-to-text technologies in an Agile
+                environment.
               </p>
             </div>
 
@@ -59,20 +66,44 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h3 className="text-foreground font-medium mb-4">Tech Stack</h3>
-              <ul className="grid grid-cols-2 gap-2">
+              <ul className="space-y-2">
                 {skills.map((skill, index) => (
                   <motion.li
-                    key={skill}
+                    key={skill.label}
                     initial={{ opacity: 0, x: 10 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.3, delay: 0.3 + index * 0.05 }}
                     className="flex items-center gap-2 text-sm text-muted-foreground"
                   >
-                    <span className="text-primary">▹</span>
-                    {skill}
+                    <span
+                      className={
+                        skill.category === "ai"
+                          ? "text-accent"
+                          : "text-primary"
+                      }
+                    >
+                      ▹
+                    </span>
+                    {skill.label}
                   </motion.li>
                 ))}
               </ul>
+
+              <h3 className="text-foreground font-medium mt-6 mb-3">
+                Soft Skills
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["Independent Learner", "Team Player", "Leadership"].map(
+                  (s) => (
+                    <span
+                      key={s}
+                      className="text-xs mono px-2 py-1 rounded bg-secondary text-muted-foreground border border-border/50"
+                    >
+                      {s}
+                    </span>
+                  )
+                )}
+              </div>
             </motion.div>
           </div>
         </motion.div>

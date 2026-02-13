@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 const navItems = [
   { name: "About", href: "#about" },
   { name: "Experience", href: "#experience" },
+  { name: "Projects", href: "#projects" },
   { name: "Education", href: "#education" },
   { name: "Awards", href: "#awards" },
   { name: "Contact", href: "#contact" },
@@ -27,11 +28,10 @@ const Navigation = () => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-background/80 backdrop-blur-lg border-b border-border/50"
           : ""
-      }`}
+        }`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a

@@ -16,15 +16,16 @@ const Contact = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="mono text-primary text-sm mb-4">05. What's Next?</p>
-          
+          <p className="mono text-primary text-sm mb-4">06. What's Next?</p>
+
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Get In Touch
           </h2>
-          
+
           <p className="max-w-md mx-auto text-muted-foreground mb-10">
-            I'm currently looking for opportunities to work on impactful AI projects. 
-            Whether you have a question or just want to say hi, I'll do my best to get back to you!
+            I'm currently looking for opportunities to work on impactful AI
+            projects. Whether you have a question or just want to say hi, I'll
+            do my best to get back to you!
           </p>
 
           <motion.div
